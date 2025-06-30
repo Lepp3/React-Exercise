@@ -1,17 +1,18 @@
 import Card from '../Card/Card';
 import { StyledBaseSection } from '../../../../utils/GlobalStyles';
-import cardInfo from '../../../../assets/cardInfo.json';
+import solutionsCardsInfo from '../../../../assets/solutionsCardsInfo.json';
 
 function SolutionsSection() {
   return (
     <StyledBaseSection>
-      {cardInfo.map((card) => (
+      {solutionsCardsInfo.map((card) => (
         <Card
           key={card.id}
           layout="column"
           image={card.image}
           description={card.description}
           title={card.name}
+          label={card.label}
         />
       ))}
     </StyledBaseSection>

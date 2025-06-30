@@ -35,10 +35,12 @@ background: none;
 export const StyledBaseSection = styled.section`
   border-bottom: 1px solid gray;
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   padding: 20px;
-  height: 350px;
+  height: auto;
   width: 100%;
+  justify-content: space-around;
 `;
 
 export const StyledSectionLabel = styled.h3`

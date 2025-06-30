@@ -1,11 +1,19 @@
-import { StyledCard } from './Card.styles';
+import {
+  StyledCard,
+  StyledCardInfoContainer,
+  StyledCtaContainer,
+  StyledImg,
+  StyledButtonsAndTitleContainer,
+  CardControlButtonsHolder,
+  StyledCtaButton,
+} from './Card.styles';
 
 interface CardProps {
   title: string;
   image: string;
   description: string;
+  label: string;
   layout?: 'default' | 'wide' | 'row-reverse' | 'column';
-  children?: React.ReactNode;
 }
 
 function Card({
@@ -13,20 +21,31 @@ function Card({
   image,
   description,
   layout = 'default',
-  children,
+  label,
 }: CardProps) {
   return (
     <StyledCard $layout={layout}>
-      <img
-        src={image}
-        alt={title}
-        style={{ width: 120, height: 120, objectFit: 'cover' }}
-      />
-      <div>
-        <h2>{title}</h2>
+      <StyledImg src={image} alt={title} />
+      <StyledCardInfoContainer>
+        <StyledButtonsAndTitleContainer>
+          <h2>{title}</h2>
+          <CardControlButtonsHolder>
+            <button>
+              <i className="fa-solid fa-pen"></i>
+            </button>
+            <button>
+              <i className="fa-solid fa-trash"></i>
+            </button>
+          </CardControlButtonsHolder>
+        </StyledButtonsAndTitleContainer>
+        <p>{label}</p>
+
         <p>{description}</p>
-        {children}
-      </div>
+      </StyledCardInfoContainer>
+
+      <StyledCtaContainer>
+        <StyledCtaButton to={'/solutions/:id'}>Learn More</StyledCtaButton>
+      </StyledCtaContainer>
     </StyledCard>
   );
 }

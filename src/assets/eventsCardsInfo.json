@@ -1,38 +1,44 @@
 [
   {
-    "id": "1",
-    "name": "Efficient modular deployment system",
+    "id": "7f4e8894-e8c5-4434-8c44-7ecb93a15152",
+    "name": "FarmUp",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "workflow",
     "description": "Streamline rural task automation with distributed protocol infrastructure."
   },
   {
-    "id": "2",
-    "name": "Cross-platform synergy optimizer",
+    "id": "f57a9e94-c6c4-4a64-a47d-f4fc9c7aaf62",
+    "name": "GrowIQ",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "metrics",
     "description": "Maximize crop efficiency via enhanced decision-making heuristics."
   },
   {
-    "id": "3",
-    "name": "Scalable farming intelligence matrix",
+    "id": "8a1f92a1-24de-4348-9e76-12ffebff27b7",
+    "name": "TerraX",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "planning",
     "description": "Deliver insights into seasonal logistics and adaptive workflows."
   },
   {
-    "id": "4",
-    "name": "Integrated agro analytics dashboard",
+    "id": "69bd6ed6-0ab6-4d1a-9f3a-c8583ee40e5b",
+    "name": "FarmOS",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "vision",
     "description": "Leverage AI-driven patterns for precision field monitoring."
   },
   {
-    "id": "5",
-    "name": "Robust terrain data pipeline",
+    "id": "cd7f0d47-6c25-4dd6-8a63-fc862ca624e6",
+    "name": "Landix",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "mapping",
     "description": "Transform ground data into actionable tractor routing intel."
   },
   {
-    "id": "6",
-    "name": "Dynamic soil prediction module",
+    "id": "64a03a86-0894-4d46-bb84-e9db160e79bb",
+    "name": "SowIQ",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "climate",
     "description": "Model nutrient shifts and climate patterns for optimal sowing."
   }
 ]

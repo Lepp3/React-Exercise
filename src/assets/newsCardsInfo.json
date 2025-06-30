@@ -1,0 +1,44 @@
+[
+  {
+    "id": "f9711d3b-43f6-4d00-b27a-2c4ac16f8dc5",
+    "name": "CropGo",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "automation",
+    "description": "Streamline rural task automation with distributed protocol infrastructure."
+  },
+  {
+    "id": "a6802b4d-b3f2-45b1-a285-8e3f2f8fae08",
+    "name": "EcoMax",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "analytics",
+    "description": "Maximize crop efficiency via enhanced decision-making heuristics."
+  },
+  {
+    "id": "7c259348-278b-429e-9c56-cf23098380b9",
+    "name": "PlotIQ",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "logistics",
+    "description": "Deliver insights into seasonal logistics and adaptive workflows."
+  },
+  {
+    "id": "5f6d1796-91cd-4764-8e61-cc9be61f3d1a",
+    "name": "AgXPro",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "monitoring",
+    "description": "Leverage AI-driven patterns for precision field monitoring."
+  },
+  {
+    "id": "bfe40d2f-f24f-4556-86f2-8f1f36cc75cd",
+    "name": "TrakIt",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "routing",
+    "description": "Transform ground data into actionable tractor routing intel."
+  },
+  {
+    "id": "70b75d9c-e097-4ee3-82d6-cc1f401f7476",
+    "name": "Farmix",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "label": "forecast",
+    "description": "Model nutrient shifts and climate patterns for optimal sowing."
+  }
+]
