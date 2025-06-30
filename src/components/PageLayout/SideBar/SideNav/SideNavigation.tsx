@@ -1,6 +1,9 @@
 import { StyledSideNavigation, StyledNavButton } from './SideNavigation.styles';
+import { useUserContext } from '../../../../contexts/UserContext/useUserContext';
 
 function SideNavigation() {
+  const { userLogoutHandler } = useUserContext();
+
   return (
     <StyledSideNavigation>
       <li>
@@ -13,7 +16,9 @@ function SideNavigation() {
         <StyledNavButton to={'#'}>News</StyledNavButton>
       </li>
       <li>
-        <StyledNavButton to={'#'}>Log out</StyledNavButton>
+        <StyledNavButton to={'#'} onClick={userLogoutHandler}>
+          Log out
+        </StyledNavButton>
       </li>
     </StyledSideNavigation>
   );
