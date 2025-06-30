@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Efficient modular deployment system",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Streamline rural task automation with distributed protocol infrastructure."
+  },
+  {
+    "id": "2",
+    "name": "Cross-platform synergy optimizer",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Maximize crop efficiency via enhanced decision-making heuristics."
+  },
+  {
+    "id": "3",
+    "name": "Scalable farming intelligence matrix",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Deliver insights into seasonal logistics and adaptive workflows."
+  },
+  {
+    "id": "4",
+    "name": "Integrated agro analytics dashboard",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Leverage AI-driven patterns for precision field monitoring."
+  },
+  {
+    "id": "5",
+    "name": "Robust terrain data pipeline",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Transform ground data into actionable tractor routing intel."
+  },
+  {
+    "id": "6",
+    "name": "Dynamic soil prediction module",
+    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
+    "description": "Model nutrient shifts and climate patterns for optimal sowing."
+  }
+]

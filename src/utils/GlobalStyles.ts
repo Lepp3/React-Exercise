@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle, styled } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 *,*:after,*:before{
@@ -31,4 +30,24 @@ cursor: pointer;
 border: none;
 background: none;
 }
-`
+`;
+
+export const StyledBaseSection = styled.section`
+  border-bottom: 1px solid gray;
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  height: 350px;
+  width: 100%;
+`;
+
+export const StyledSectionLabel = styled.h3`
+  opacity: 0.8;
+  font-weight: bold;
+  font-size: 1.3rem;
+`;
+
+export const StyledSectionTitle = styled.h2`
+  font-weight: bold;
+  font-size: 1.8rem;
+`;
