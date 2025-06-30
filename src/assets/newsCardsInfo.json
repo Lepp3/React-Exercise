@@ -33,12 +33,5 @@
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "routing",
     "description": "Transform ground data into actionable tractor routing intel."
-  },
-  {
-    "id": "70b75d9c-e097-4ee3-82d6-cc1f401f7476",
-    "name": "Farmix",
-    "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
-    "label": "forecast",
-    "description": "Model nutrient shifts and climate patterns for optimal sowing."
   }
 ]
