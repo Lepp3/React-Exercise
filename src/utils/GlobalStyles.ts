@@ -43,6 +43,20 @@ export const StyledBaseSection = styled.section`
   justify-content: space-around;
 `;
 
+export const StyledSectionTitleAndButton = styled.div`
+  display: flex;
+  width: 100%;
+  flex: 0 0 100%;
+  padding: 15px;
+  justify-content: space-between;
+`;
+
+export const StyledSectionLabelAndTitleHolder = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+`;
+
 export const StyledSectionLabel = styled.h3`
   opacity: 0.8;
   font-weight: bold;
