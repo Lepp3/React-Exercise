@@ -13,18 +13,24 @@ import { useSearchParams } from 'react-router';
 function SolutionsSection() {
   const { solutions } = useCardContext();
   const [searchParams, setSearchParams] = useSearchParams();
-  const cardId = searchParams.get('id');
-  const isEditing = searchParams.get('edit') === 'true';
 
-  const handleEditClick = (id: string) => {
-    setSearchParams({ edit: 'true', id });
-  };
+  const editId = searchParams.get('id');
+  const isEditing = searchParams.get('edit') === 'true';
+  const isCreating = searchParams.get('create') === 'true';
+
+  const editedCard = solutions.cards.find((card) => card.id === editId);
 
   const closeModal = () => {
     setSearchParams({});
   };
 
-  const editedCard = solutions.cards.find((card) => card.id === cardId);
+  const handleEditClick = (id: string) => {
+    setSearchParams({ edit: 'true', id });
+  };
+
+  const handleCreateClick = () => {
+    setSearchParams({ create: 'true' });
+  };
 
   return (
     <StyledBaseSection>
@@ -33,10 +39,11 @@ function SolutionsSection() {
           <StyledSectionTitle>Solutions</StyledSectionTitle>
           <StyledSectionLabel>Find our premium solutions</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button>
+        <button onClick={handleCreateClick}>
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
+
       {solutions.cards.map((card) => (
         <Card
           key={card.id}
@@ -46,11 +53,17 @@ function SolutionsSection() {
           onDeleteClick={() => solutions.deleteCard(card.id)}
         />
       ))}
-      {isEditing && editedCard && (
+
+      {(isEditing || isCreating) && (
         <EditCardModal
-          card={editedCard}
-          onSave={(updated) => {
-            solutions.updateCard(updated);
+          mode={isEditing ? 'edit' : 'create'}
+          card={isEditing ? editedCard : undefined}
+          onSave={(card) => {
+            if (isEditing) {
+              solutions.updateCard(card);
+            } else {
+              solutions.addCard(card);
+            }
             closeModal();
           }}
           onClose={closeModal}
