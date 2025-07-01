@@ -25,10 +25,21 @@ function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
   );
 
   useEffect(() => {
-    if (card && isEdit) {
+    if (mode === 'edit' && card) {
       setForm(card);
     }
-  }, [card, isEdit]);
+    if (mode === 'create') {
+      setForm({
+        id: uuidv4(),
+        title: '',
+        image: '',
+        description: '',
+        label: '',
+        actionButtonName: '',
+        layout: 'column',
+      });
+    }
+  }, [mode, card]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -41,6 +52,8 @@ function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
     e.preventDefault();
     onSave(form);
   };
+
+  if (mode === 'edit' && !card) return null;
 
   return (
     <StyledOverlay onClick={onClose}>

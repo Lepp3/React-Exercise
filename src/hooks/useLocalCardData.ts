@@ -19,6 +19,7 @@ export default function useLocalCardData(key: string, initialData: CardData[]) {
     setCards((previousState) => {
       const newState = [...previousState, card];
       localStorage.setItem(key, JSON.stringify(newState));
+      console.log(key);
       return newState;
     });
   };
