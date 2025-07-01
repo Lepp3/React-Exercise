@@ -7,6 +7,7 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
+import { type CardData } from '../Card/types/Card.types';
 
 function FeaturedSection() {
   return (
@@ -20,15 +21,8 @@ function FeaturedSection() {
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
-      {featuredCardsInfo.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          image={card.image}
-          description={card.description}
-          title={card.name}
-          label={card.label}
-        />
+      {featuredCardsInfo.map((card: CardData) => (
+        <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>
   );

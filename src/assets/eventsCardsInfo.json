@@ -1,44 +1,50 @@
 [
   {
     "id": "7f4e8894-e8c5-4434-8c44-7ecb93a15152",
-    "name": "FarmUp",
+    "title": "FarmUp",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "workflow",
-    "description": "Streamline rural task automation with distributed protocol infrastructure."
+    "description": "Streamline rural task automation with distributed protocol infrastructure.",
+    "actionButtonName": "Learn More"
   },
   {
     "id": "f57a9e94-c6c4-4a64-a47d-f4fc9c7aaf62",
-    "name": "GrowIQ",
+    "title": "GrowIQ",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "metrics",
-    "description": "Maximize crop efficiency via enhanced decision-making heuristics."
+    "description": "Maximize crop efficiency via enhanced decision-making heuristics.",
+    "actionButtonName": "Learn More"
   },
   {
     "id": "8a1f92a1-24de-4348-9e76-12ffebff27b7",
-    "name": "TerraX",
+    "title": "TerraX",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "planning",
-    "description": "Deliver insights into seasonal logistics and adaptive workflows."
+    "description": "Deliver insights into seasonal logistics and adaptive workflows.",
+    "actionButtonName": "Learn More"
   },
   {
     "id": "69bd6ed6-0ab6-4d1a-9f3a-c8583ee40e5b",
-    "name": "FarmOS",
+    "title": "FarmOS",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "vision",
-    "description": "Leverage AI-driven patterns for precision field monitoring."
+    "description": "Leverage AI-driven patterns for precision field monitoring.",
+    "actionButtonName": "Learn More"
   },
   {
     "id": "cd7f0d47-6c25-4dd6-8a63-fc862ca624e6",
-    "name": "Landix",
+    "title": "Landix",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "mapping",
-    "description": "Transform ground data into actionable tractor routing intel."
+    "description": "Transform ground data into actionable tractor routing intel.",
+    "actionButtonName": "Explore"
   },
   {
     "id": "64a03a86-0894-4d46-bb84-e9db160e79bb",
-    "name": "SowIQ",
+    "title": "SowIQ",
     "image": "https://media.istockphoto.com/id/543212762/photo/tractor-cultivating-field-at-spring.jpg?s=612x612&w=0&k=20&c=uJDy7MECNZeHDKfUrLNeQuT7A1IqQe89lmLREhjIJYU=",
     "label": "climate",
-    "description": "Model nutrient shifts and climate patterns for optimal sowing."
+    "description": "Model nutrient shifts and climate patterns for optimal sowing.",
+    "actionButtonName": "Read more"
   }
 ]

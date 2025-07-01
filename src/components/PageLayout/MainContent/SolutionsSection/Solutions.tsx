@@ -21,14 +21,7 @@ function SolutionsSection() {
         </button>
       </StyledSectionTitleAndButton>
       {solutionsCardsInfo.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          image={card.image}
-          description={card.description}
-          title={card.name}
-          label={card.label}
-        />
+        <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>
   );

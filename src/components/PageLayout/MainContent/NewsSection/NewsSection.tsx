@@ -1,5 +1,5 @@
-import newsCardsInfo from '../../../../assets/featuredCardsInfo.json';
 import Card from '../Card/Card';
+import newsCardsInfo from '../../../../assets/newsCardsInfo.json';
 import {
   StyledBaseSection,
   StyledSectionTitleAndButton,
@@ -21,14 +21,7 @@ function NewsSection() {
         </button>
       </StyledSectionTitleAndButton>
       {newsCardsInfo.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          image={card.image}
-          description={card.description}
-          title={card.name}
-          label={card.label}
-        />
+        <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>
   );

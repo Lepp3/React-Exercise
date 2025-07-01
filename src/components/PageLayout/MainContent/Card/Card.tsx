@@ -7,14 +7,7 @@ import {
   CardControlButtonsHolder,
   StyledCtaButton,
 } from './Card.styles';
-
-interface CardProps {
-  title: string;
-  image: string;
-  description: string;
-  label: string;
-  layout?: 'default' | 'wide' | 'row-reverse' | 'column';
-}
+import { type CardData } from './types/Card.types';
 
 function Card({
   title,
@@ -22,7 +15,8 @@ function Card({
   description,
   layout = 'default',
   label,
-}: CardProps) {
+  actionButtonName,
+}: CardData) {
   return (
     <StyledCard $layout={layout}>
       <StyledImg src={image} alt={title} />
@@ -44,7 +38,9 @@ function Card({
       </StyledCardInfoContainer>
 
       <StyledCtaContainer>
-        <StyledCtaButton to={'/solutions/:id'}>Learn More</StyledCtaButton>
+        <StyledCtaButton to={'/solutions/:id'}>
+          {actionButtonName}
+        </StyledCtaButton>
       </StyledCtaContainer>
     </StyledCard>
   );
