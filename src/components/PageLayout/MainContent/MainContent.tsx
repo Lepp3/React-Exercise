@@ -3,6 +3,8 @@ import HeroSection from './HeroSection/HeroSection';
 import SolutionsSection from './SolutionsSection/Solutions';
 import FeaturedSection from './FeaturedSection/FeaturedSection';
 import NewsSection from './NewsSection/NewsSection';
+import EventsSection from './EventsSection/EventsSection';
+import PodcastsSection from './PodcastsSection/PodcastsSection';
 
 function MainContent() {
   return (
@@ -10,6 +12,8 @@ function MainContent() {
       <HeroSection />
       <SolutionsSection />
       <FeaturedSection />
+      <EventsSection />
+      <PodcastsSection />
       <NewsSection />
     </StyledMain>
   );

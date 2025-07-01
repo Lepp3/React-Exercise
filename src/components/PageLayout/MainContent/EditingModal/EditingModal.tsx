@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { type CardData } from '../Card/types/Card.types';
 import { StyledOverlay, StyledModal } from './EditingModal.styles';
+import { v4 as uuidv4 } from 'uuid';
 
 interface EditCardModalProps {
   mode: 'edit' | 'create';
@@ -13,7 +14,7 @@ function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
   const isEdit = mode === 'edit';
   const [form, setForm] = useState<CardData>(
     card ?? {
-      id: '224',
+      id: uuidv4(),
       title: '',
       image: '',
       description: '',

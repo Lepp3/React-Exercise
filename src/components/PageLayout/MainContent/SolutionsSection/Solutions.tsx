@@ -29,7 +29,7 @@ function SolutionsSection() {
   };
 
   const handleCreateClick = () => {
-    setSearchParams({ create: 'true' });
+    setSearchParams({ create: 'true', section: 'solutions' });
   };
 
   return (

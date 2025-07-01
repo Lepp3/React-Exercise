@@ -6,19 +6,19 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
-import { useSearchParams } from 'react-router';
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 import EditCardModal from '../EditingModal/EditingModal';
+import { useSearchParams } from 'react-router';
 
-function FeaturedSection() {
-  const { featured } = useCardContext();
+function PodcastsSection() {
+  const { podcasts } = useCardContext();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const editId = searchParams.get('id');
   const isEditing = searchParams.get('edit') === 'true';
   const isCreating = searchParams.get('create') === 'true';
 
-  const editedCard = featured.cards.find((card) => card.id === editId);
+  const editedCard = podcasts.cards.find((card) => card.id === editId);
 
   const closeModal = () => {
     setSearchParams({});
@@ -29,30 +29,28 @@ function FeaturedSection() {
   };
 
   const handleCreateClick = () => {
-    setSearchParams({ create: 'true', section: 'featured' });
+    setSearchParams({ create: 'true', section: 'news' });
   };
 
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
         <StyledSectionLabelAndTitleHolder>
-          <StyledSectionTitle>Featured</StyledSectionTitle>
-          <StyledSectionLabel>
-            Learn about our featured solutions
-          </StyledSectionLabel>
+          <StyledSectionTitle>Podcasts</StyledSectionTitle>
+          <StyledSectionLabel>Listen to our latest podcasts</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
         <button onClick={handleCreateClick}>
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
 
-      {featured.cards.map((card) => (
+      {podcasts.cards.map((card) => (
         <Card
           key={card.id}
           layout="column"
           {...card}
           onEditClick={() => handleEditClick(card.id)}
-          onDeleteClick={() => featured.deleteCard(card.id)}
+          onDeleteClick={() => podcasts.deleteCard(card.id)}
         />
       ))}
 
@@ -62,9 +60,9 @@ function FeaturedSection() {
           card={isEditing ? editedCard : undefined}
           onSave={(card) => {
             if (isEditing) {
-              featured.updateCard(card);
+              podcasts.updateCard(card);
             } else {
-              featured.addCard(card);
+              podcasts.addCard(card);
             }
             closeModal();
           }}
@@ -75,4 +73,4 @@ function FeaturedSection() {
   );
 }
 
-export default FeaturedSection;
+export default PodcastsSection;
