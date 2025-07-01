@@ -7,3 +7,8 @@ export type CardData = {
   actionButtonName: string;
   layout?: 'default' | 'wide' | 'row-reverse' | 'column';
 };
+
+export interface CardProps extends CardData {
+  onEditClick?: () => void;
+  onDeleteClick?: () => void;
+}

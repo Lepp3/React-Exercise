@@ -7,7 +7,7 @@ import {
   CardControlButtonsHolder,
   StyledCtaButton,
 } from './Card.styles';
-import { type CardData } from './types/Card.types';
+import { type CardProps } from './types/Card.types';
 
 function Card({
   id,
@@ -17,7 +17,9 @@ function Card({
   layout = 'default',
   label,
   actionButtonName,
-}: CardData) {
+  onEditClick,
+  onDeleteClick,
+}: CardProps) {
   return (
     <StyledCard $layout={layout}>
       <StyledImg src={image} alt={title} />
@@ -25,10 +27,10 @@ function Card({
         <StyledButtonsAndTitleContainer>
           <h2>{title}</h2>
           <CardControlButtonsHolder>
-            <button>
+            <button onClick={onEditClick}>
               <i className="fa-solid fa-pen"></i>
             </button>
-            <button>
+            <button onClick={onDeleteClick}>
               <i className="fa-solid fa-trash"></i>
             </button>
           </CardControlButtonsHolder>

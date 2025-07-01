@@ -24,7 +24,13 @@ function FeaturedSection() {
         </button>
       </StyledSectionTitleAndButton>
       {featured.cards.map((card: CardData) => (
-        <Card key={card.id} layout="column" {...card} />
+        <Card
+          key={card.id}
+          layout="column"
+          {...card}
+          onEditClick={() => featured.updateCard(card)}
+          onDeleteClick={() => featured.deleteCard(card.id)}
+        />
       ))}
     </StyledBaseSection>
   );

@@ -22,7 +22,13 @@ function SolutionsSection() {
         </button>
       </StyledSectionTitleAndButton>
       {solutions.cards.map((card) => (
-        <Card key={card.id} layout="column" {...card} />
+        <Card
+          key={card.id}
+          layout="column"
+          {...card}
+          onEditClick={() => solutions.updateCard(card)}
+          onDeleteClick={() => solutions.deleteCard(card.id)}
+        />
       ))}
     </StyledBaseSection>
   );
