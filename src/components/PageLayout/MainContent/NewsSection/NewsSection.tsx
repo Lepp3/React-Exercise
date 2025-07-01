@@ -1,5 +1,4 @@
 import Card from '../Card/Card';
-import newsCardsInfo from '../../../../assets/newsCardsInfo.json';
 import {
   StyledBaseSection,
   StyledSectionTitleAndButton,
@@ -7,8 +6,10 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
+import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 
 function NewsSection() {
+  const { news } = useCardContext();
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -20,7 +21,7 @@ function NewsSection() {
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
-      {newsCardsInfo.map((card) => (
+      {news.cards.map((card) => (
         <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>

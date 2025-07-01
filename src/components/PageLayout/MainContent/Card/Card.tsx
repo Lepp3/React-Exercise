@@ -10,6 +10,7 @@ import {
 import { type CardData } from './types/Card.types';
 
 function Card({
+  id,
   title,
   image,
   description,
@@ -38,7 +39,7 @@ function Card({
       </StyledCardInfoContainer>
 
       <StyledCtaContainer>
-        <StyledCtaButton to={'/solutions/:id'}>
+        <StyledCtaButton to={`solutions/${id}`}>
           {actionButtonName}
         </StyledCtaButton>
       </StyledCtaContainer>

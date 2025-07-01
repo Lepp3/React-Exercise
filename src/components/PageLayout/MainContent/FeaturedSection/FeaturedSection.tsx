@@ -1,4 +1,3 @@
-import featuredCardsInfo from '../../../../assets/featuredCardsInfo.json';
 import Card from '../Card/Card';
 import {
   StyledBaseSection,
@@ -8,8 +7,11 @@ import {
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
 import { type CardData } from '../Card/types/Card.types';
+import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 
 function FeaturedSection() {
+  const { featured } = useCardContext();
+
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -21,7 +23,7 @@ function FeaturedSection() {
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
-      {featuredCardsInfo.map((card: CardData) => (
+      {featured.cards.map((card: CardData) => (
         <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>

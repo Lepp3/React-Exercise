@@ -6,9 +6,10 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
-import solutionsCardsInfo from '../../../../assets/solutionsCardsInfo.json';
+import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 
 function SolutionsSection() {
+  const { solutions } = useCardContext();
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -20,7 +21,7 @@ function SolutionsSection() {
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
-      {solutionsCardsInfo.map((card) => (
+      {solutions.cards.map((card) => (
         <Card key={card.id} layout="column" {...card} />
       ))}
     </StyledBaseSection>
