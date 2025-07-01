@@ -22,7 +22,13 @@ function NewsSection() {
         </button>
       </StyledSectionTitleAndButton>
       {news.cards.map((card) => (
-        <Card key={card.id} layout="column" {...card} />
+        <Card
+          key={card.id}
+          layout="column"
+          {...card}
+          onEditClick={() => news.updateCard(card)}
+          onDeleteClick={() => news.deleteCard(card.id)}
+        />
       ))}
     </StyledBaseSection>
   );
