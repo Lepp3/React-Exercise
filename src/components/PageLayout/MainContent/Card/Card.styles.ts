@@ -13,16 +13,11 @@ interface WideCardTopContainerProps {
 
 export const StyledCard = styled.article<StyledCardProps>`
   display: flex;
-  flex-direction: ${({ $layout }) =>
-    $layout === 'row-reverse'
-      ? 'row-reverse'
-      : $layout === 'column'
-      ? 'column'
-      : 'row'};
+  flex-direction: column;
 
-  width: ${({ $size }) => ($size === 'wide' ? '45%' : '100%')};
+  width: 45%;
 
-  max-width: ${({ $size }) => ($size === 'wide' ? 'none' : '300px')};
+  max-width: 300px;
   background-color: white;
   border-radius: 9px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);

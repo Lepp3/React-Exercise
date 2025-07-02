@@ -23,3 +23,34 @@ export const StyledModal = styled.div`
   flex-direction: column;
   gap: 1rem;
 `;
+
+export const FormGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 14px 0;
+`;
+
+export const StyledInput = styled.input`
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+
+  &:focus {
+    text-align: left;
+  }
+`;
+
+export const StyledTextArea = styled.textarea`
+  padding: 7px 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+
+  &:focus {
+    text-align: left;
+  }
+`;

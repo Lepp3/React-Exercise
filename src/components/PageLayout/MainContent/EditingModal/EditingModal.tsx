@@ -1,6 +1,12 @@
 import { useState, useMemo } from 'react';
 import { type CardProps } from '../Card/types/Card.types';
-import { StyledOverlay, StyledModal } from './EditingModal.styles';
+import {
+  StyledOverlay,
+  StyledModal,
+  FormGroup,
+  StyledInput,
+  StyledTextArea,
+} from './EditingModal.styles';
 import { v4 as uuidv4 } from 'uuid';
 import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
@@ -61,49 +67,72 @@ function EditCardModal({
       <StyledModal onClick={(e) => e.stopPropagation()}>
         <h2>{isEdit ? 'Edit Card' : 'Create Card'}</h2>
         <form onSubmit={handleSubmit}>
-          <input
-            name="title"
-            value={form.title}
-            onChange={handleChange}
-            placeholder="Title"
-          />
-          <input
-            name="image"
-            value={form.image}
-            onChange={handleChange}
-            placeholder="Image URL"
-          />
-          <input
-            name="label"
-            value={form.label}
-            onChange={handleChange}
-            placeholder="Label"
-          />
-          <textarea
-            name="description"
-            value={form.description}
-            onChange={handleChange}
-            placeholder="Description"
-          />
-          <input
-            name="actionButtonName"
-            value={form.actionButtonName}
-            onChange={handleChange}
-            placeholder="Button Text"
-          />
-          <button
-            type="submit"
-            disabled={!isFormValid}
-            style={{
-              opacity: isFormValid ? 1 : 0.6,
-              cursor: isFormValid ? 'pointer' : 'not-allowed',
-            }}
-          >
-            {isEdit ? 'Save Changes' : 'Create Card'}
-          </button>
-          <button type="button" onClick={onClose}>
-            Cancel
-          </button>
+          <FormGroup>
+            <label htmlFor="title">Card Title: </label>
+            <StyledInput
+              id="title"
+              name="title"
+              value={form.title}
+              onChange={handleChange}
+              placeholder="Title"
+            />
+          </FormGroup>
+          <FormGroup>
+            <label htmlFor="image">Card Image: </label>
+            <StyledInput
+              id="image"
+              name="image"
+              value={form.image}
+              onChange={handleChange}
+              placeholder="Image URL"
+            />
+          </FormGroup>
+          <FormGroup>
+            <label htmlFor="label">Card Label: </label>
+            <StyledInput
+              id="label"
+              name="label"
+              value={form.label}
+              onChange={handleChange}
+              placeholder="Label"
+            />
+          </FormGroup>
+
+          <FormGroup>
+            <label htmlFor="description">Card Description: </label>
+            <StyledTextArea
+              id="description"
+              name="description"
+              value={form.description}
+              onChange={handleChange}
+              placeholder="Description"
+            />
+          </FormGroup>
+          <FormGroup>
+            <label htmlFor="actionButtonName">Name of action: </label>
+            <StyledInput
+              id="actionButtonName"
+              name="actionButtonName"
+              value={form.actionButtonName}
+              onChange={handleChange}
+              placeholder="Button Text"
+            />
+          </FormGroup>
+          <FormGroup>
+            <button
+              type="submit"
+              disabled={!isFormValid}
+              style={{
+                opacity: isFormValid ? 1 : 0.6,
+                cursor: isFormValid ? 'pointer' : 'not-allowed',
+              }}
+            >
+              {isEdit ? 'Save Changes' : 'Create Card'}
+            </button>
+            <button type="button" onClick={onClose}>
+              Cancel
+            </button>
+          </FormGroup>
         </form>
       </StyledModal>
     </StyledOverlay>
