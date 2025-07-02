@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import { StyledBaseSection } from '../../../utils/GlobalStyles';
+import {
+  StyledBaseSection,
+  StyledSectionTitleAndButton,
+} from '../../../utils/GlobalStyles';
 
 export const StyledMain = styled.main`
   display: flex;
@@ -12,6 +15,12 @@ export const StyledHalfSection = styled(StyledBaseSection)`
   display: flex;
   flex-wrap: wrap;
   border: none;
+  justify-content: flex-start;
+  padding: 10px;
+`;
+
+export const StyledHalfSectionHeadings = styled(StyledSectionTitleAndButton)`
+  max-height: 120px;
 `;
 
 export const StyledWrapper = styled(StyledBaseSection)`

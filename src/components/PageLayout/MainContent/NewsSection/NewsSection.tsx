@@ -5,6 +5,7 @@ import {
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
+  StyledSectionActionButton,
 } from '../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
 
@@ -16,9 +17,9 @@ function NewsSection({ state, onEdit, onCreate }: SectionProps) {
           <StyledSectionTitle>News</StyledSectionTitle>
           <StyledSectionLabel>Check out the latest news</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={() => onCreate('news')}>
+        <StyledSectionActionButton onClick={() => onCreate('news')}>
           <i className="fa-solid fa-plus"></i>
-        </button>
+        </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
 
       {state.cards.map((card) => (

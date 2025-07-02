@@ -4,6 +4,7 @@ import {
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
+  StyledSectionActionButton,
 } from '../../../../utils/GlobalStyles';
 import { type SectionProps } from '../SolutionsSection/Solutions';
 import { StyledHalfSection } from '../MainContent.styles';
@@ -16,15 +17,16 @@ function EventsSection({ state, onEdit, onCreate }: SectionProps) {
           <StyledSectionTitle>Events</StyledSectionTitle>
           <StyledSectionLabel>Newest Events</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={() => onCreate('events')}>
+        <StyledSectionActionButton onClick={() => onCreate('events')}>
           <i className="fa-solid fa-plus"></i>
-        </button>
+        </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
 
       {state.cards.map((card) => (
         <Card
           key={card.id}
-          layout="column"
+          layout="row"
+          size="wide"
           {...card}
           onEditClick={() => onEdit('events', card)}
           onDeleteClick={() => state.deleteCard(card.id)}

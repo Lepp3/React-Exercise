@@ -6,10 +6,7 @@ import {
   StyledButtonsAndTitleContainer,
   CardControlButtonsHolder,
   StyledCtaButton,
-  StyledWideCardImg,
-  StyledWideCardInfoHolder,
-  StyledWideCardTopContainer,
-  StyledWideCard,
+  StyledCardTopContainer,
 } from './Card.styles';
 import { type CardProps } from './types/Card.types';
 import defaultImage from '../../../../assets/images/Yara_International.jpg';
@@ -28,66 +25,34 @@ function Card({
   onDeleteClick,
 }: CardProps) {
   const [imageSrc, setImageSrc] = useState(image || defaultImage);
-  const isWide = size === 'wide';
 
-  return isWide ? (
-    <StyledWideCard $size={size}>
-      <StyledWideCardTopContainer $layout={layout}>
-        <StyledWideCardImg
+  return (
+    <StyledCard $size={size}>
+      <StyledCardTopContainer $layout={layout}>
+        <StyledImg
+          $size={size}
           src={imageSrc}
           alt={title}
           onError={() => setImageSrc(defaultImage)}
         />
-        <StyledWideCardInfoHolder>
-          <StyledCardInfoContainer>
-            <StyledButtonsAndTitleContainer>
-              <h2>{title}</h2>
-              <CardControlButtonsHolder>
-                <button onClick={onEditClick}>
-                  <i className="fa-solid fa-pen"></i>
-                </button>
-                <button onClick={onDeleteClick}>
-                  <i className="fa-solid fa-trash"></i>
-                </button>
-              </CardControlButtonsHolder>
-            </StyledButtonsAndTitleContainer>
-            <p>{label}</p>
+        <StyledCardInfoContainer $size={size}>
+          <StyledButtonsAndTitleContainer>
+            <h2>{title}</h2>
+            <CardControlButtonsHolder>
+              <button onClick={onEditClick}>
+                <i className="fa-solid fa-pen"></i>
+              </button>
+              <button onClick={onDeleteClick}>
+                <i className="fa-solid fa-trash"></i>
+              </button>
+            </CardControlButtonsHolder>
+          </StyledButtonsAndTitleContainer>
+          <p>{label}</p>
 
-            <p>{description}</p>
-          </StyledCardInfoContainer>
-        </StyledWideCardInfoHolder>
-      </StyledWideCardTopContainer>
-      <StyledCtaContainer>
-        {actionButtonName !== '' ? (
-          <StyledCtaButton to={`solutions/${id}`}>
-            {actionButtonName}
-          </StyledCtaButton>
-        ) : null}
-      </StyledCtaContainer>
-    </StyledWideCard>
-  ) : (
-    <StyledCard $layout={layout} $size={size}>
-      <StyledImg
-        src={imageSrc}
-        alt={title}
-        onError={() => setImageSrc(defaultImage)}
-      />
-      <StyledCardInfoContainer>
-        <StyledButtonsAndTitleContainer>
-          <h2>{title}</h2>
-          <CardControlButtonsHolder>
-            <button onClick={onEditClick}>
-              <i className="fa-solid fa-pen"></i>
-            </button>
-            <button onClick={onDeleteClick}>
-              <i className="fa-solid fa-trash"></i>
-            </button>
-          </CardControlButtonsHolder>
-        </StyledButtonsAndTitleContainer>
-        <p>{label}</p>
+          <p>{description}</p>
+        </StyledCardInfoContainer>
+      </StyledCardTopContainer>
 
-        <p>{description}</p>
-      </StyledCardInfoContainer>
       <StyledCtaContainer>
         {actionButtonName !== '' ? (
           <StyledCtaButton to={`solutions/${id}`}>

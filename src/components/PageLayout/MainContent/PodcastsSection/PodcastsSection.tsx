@@ -1,25 +1,28 @@
 import Card from '../Card/Card';
 import {
-  StyledSectionTitleAndButton,
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
+  StyledSectionActionButton,
 } from '../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
-import { StyledHalfSection } from '../MainContent.styles';
+import {
+  StyledHalfSection,
+  StyledHalfSectionHeadings,
+} from '../MainContent.styles';
 
 function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
   return (
     <StyledHalfSection>
-      <StyledSectionTitleAndButton>
+      <StyledHalfSectionHeadings>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Podcasts</StyledSectionTitle>
           <StyledSectionLabel>Listen to our latest podcasts</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={() => onCreate('podcasts')}>
+        <StyledSectionActionButton onClick={() => onCreate('podcasts')}>
           <i className="fa-solid fa-plus"></i>
-        </button>
-      </StyledSectionTitleAndButton>
+        </StyledSectionActionButton>
+      </StyledHalfSectionHeadings>
 
       {state.cards.map((card) => (
         <Card

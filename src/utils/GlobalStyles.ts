@@ -38,7 +38,7 @@ export const StyledBaseSection = styled.section`
   flex-wrap: wrap;
   gap: 10px;
   padding: 20px;
-  height: auto;
+  flex: 1;
   width: 100%;
   justify-content: space-around;
 `;
@@ -49,6 +49,10 @@ export const StyledSectionTitleAndButton = styled.div`
   flex: 0 0 100%;
   padding: 15px;
   justify-content: space-between;
+`;
+
+export const StyledSectionActionButton = styled.button`
+  align-self: flex-start;
 `;
 
 export const StyledSectionLabelAndTitleHolder = styled.div`

@@ -5,14 +5,15 @@ import {
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
+  StyledSectionActionButton,
 } from '../../../../utils/GlobalStyles';
-import type { CardData } from '../Card/types/Card.types';
+import { type CardProps } from '../Card/types/Card.types';
 import { type SectionCardState } from '../../../../contexts/CardContext/CardProvider';
 import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
 export interface SectionProps {
   state: SectionCardState;
-  onEdit: (sectionKey: SectionKey, card: CardData) => void;
+  onEdit: (sectionKey: SectionKey, card: CardProps) => void;
   onCreate: (sectionKey: SectionKey) => void;
 }
 
@@ -24,15 +25,16 @@ function SolutionsSection({ state, onEdit, onCreate }: SectionProps) {
           <StyledSectionTitle>Solutions</StyledSectionTitle>
           <StyledSectionLabel>Find our premium solutions</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={() => onCreate('solutions')}>
+        <StyledSectionActionButton onClick={() => onCreate('solutions')}>
           <i className="fa-solid fa-plus"></i>
-        </button>
+        </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
 
       {state.cards.map((card) => (
         <Card
           key={card.id}
           layout="column"
+          size="narrow"
           {...card}
           onEditClick={() => onEdit('solutions', card)}
           onDeleteClick={() => state.deleteCard(card.id)}

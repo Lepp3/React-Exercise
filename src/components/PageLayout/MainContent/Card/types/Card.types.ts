@@ -12,4 +12,4 @@ export interface CardProps {
 }
 
 export type CardLayout = 'row' | 'row-reverse' | 'column';
-export type CardSize = 'narrow' | 'wide';
+export type CardSize = 'narrow' | 'half-wide' | 'wide';

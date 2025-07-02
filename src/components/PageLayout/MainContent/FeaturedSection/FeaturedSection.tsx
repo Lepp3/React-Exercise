@@ -5,6 +5,7 @@ import {
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
+  StyledSectionActionButton,
 } from '../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
 
@@ -18,9 +19,9 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
             Learn about our featured solutions
           </StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={() => onCreate('featured')}>
+        <StyledSectionActionButton onClick={() => onCreate('featured')}>
           <i className="fa-solid fa-plus"></i>
-        </button>
+        </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
 
       {state.cards.map((card, index) =>
@@ -28,7 +29,7 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
           <Card
             key={card.id}
             layout="row"
-            size="wide"
+            size="half-wide"
             {...card}
             onEditClick={() => onEdit('featured', card)}
             onDeleteClick={() => state.deleteCard(card.id)}
@@ -37,7 +38,7 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
           <Card
             key={card.id}
             layout="row-reverse"
-            size="wide"
+            size="half-wide"
             {...card}
             onEditClick={() => onEdit('featured', card)}
             onDeleteClick={() => state.deleteCard(card.id)}
