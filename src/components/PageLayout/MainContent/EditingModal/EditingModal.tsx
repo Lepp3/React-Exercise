@@ -1,16 +1,24 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { type CardData } from '../Card/types/Card.types';
 import { StyledOverlay, StyledModal } from './EditingModal.styles';
 import { v4 as uuidv4 } from 'uuid';
+import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
 interface EditCardModalProps {
   mode: 'edit' | 'create';
   card?: CardData;
-  onSave: (updatedCard: CardData) => void;
+  sectionKey: SectionKey;
+  onSave: (updatedCard: CardData, sectionKey: SectionKey) => void;
   onClose: () => void;
 }
 
-function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
+function EditCardModal({
+  mode,
+  card,
+  sectionKey,
+  onSave,
+  onClose,
+}: EditCardModalProps) {
   const isEdit = mode === 'edit';
   const [form, setForm] = useState<CardData>(
     card ?? {
@@ -24,23 +32,6 @@ function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
     }
   );
 
-  useEffect(() => {
-    if (mode === 'edit' && card) {
-      setForm(card);
-    }
-    if (mode === 'create') {
-      setForm({
-        id: uuidv4(),
-        title: '',
-        image: '',
-        description: '',
-        label: '',
-        actionButtonName: '',
-        layout: 'column',
-      });
-    }
-  }, [mode, card]);
-
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -50,7 +41,7 @@ function EditCardModal({ mode, card, onSave, onClose }: EditCardModalProps) {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    onSave(form);
+    onSave(form, sectionKey);
   };
 
   if (mode === 'edit' && !card) return null;

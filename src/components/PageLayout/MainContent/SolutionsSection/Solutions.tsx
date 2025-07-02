@@ -6,32 +6,17 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
-import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
-import EditCardModal from '../EditingModal/EditingModal';
-import { useSearchParams } from 'react-router';
+import type { CardData } from '../Card/types/Card.types';
+import { type SectionCardState } from '../../../../contexts/CardContext/CardProvider';
+import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
-function SolutionsSection() {
-  const { solutions } = useCardContext();
-  const [searchParams, setSearchParams] = useSearchParams();
+interface SolutionsSectionProps {
+  state: SectionCardState;
+  onEdit: (sectionKey: SectionKey, card: CardData) => void;
+  onCreate: (sectionKey: SectionKey) => void;
+}
 
-  const editId = searchParams.get('id');
-  const isEditing = searchParams.get('edit') === 'true';
-  const isCreating = searchParams.get('create') === 'true';
-
-  const editedCard = solutions.cards.find((card) => card.id === editId);
-
-  const closeModal = () => {
-    setSearchParams({});
-  };
-
-  const handleEditClick = (id: string) => {
-    setSearchParams({ edit: 'true', id });
-  };
-
-  const handleCreateClick = () => {
-    setSearchParams({ create: 'true', section: 'solutions' });
-  };
-
+function SolutionsSection({ state, onEdit, onCreate }: SolutionsSectionProps) {
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -39,36 +24,20 @@ function SolutionsSection() {
           <StyledSectionTitle>Solutions</StyledSectionTitle>
           <StyledSectionLabel>Find our premium solutions</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={handleCreateClick}>
+        <button onClick={() => onCreate('solutions')}>
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
 
-      {solutions.cards.map((card) => (
+      {state.cards.map((card: CardData) => (
         <Card
           key={card.id}
           layout="column"
           {...card}
-          onEditClick={() => handleEditClick(card.id)}
-          onDeleteClick={() => solutions.deleteCard(card.id)}
+          onEditClick={() => onEdit('solutions', card)}
+          onDeleteClick={() => state.deleteCard(card.id)}
         />
       ))}
-
-      {(isEditing || isCreating) && (
-        <EditCardModal
-          mode={isEditing ? 'edit' : 'create'}
-          card={isEditing ? editedCard : undefined}
-          onSave={(card) => {
-            if (isEditing) {
-              solutions.updateCard(card);
-            } else {
-              solutions.addCard(card);
-            }
-            closeModal();
-          }}
-          onClose={closeModal}
-        />
-      )}
     </StyledBaseSection>
   );
 }

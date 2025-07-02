@@ -6,32 +6,9 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
-import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
-import EditCardModal from '../EditingModal/EditingModal';
-import { useSearchParams } from 'react-router';
+import { type SectionProps } from '../SolutionsSection/Solutions';
 
-function EventsSection() {
-  const { events } = useCardContext();
-  const [searchParams, setSearchParams] = useSearchParams();
-
-  const editId = searchParams.get('id');
-  const isEditing = searchParams.get('edit') === 'true';
-  const isCreating = searchParams.get('create') === 'true';
-
-  const editedCard = events.cards.find((card) => card.id === editId);
-
-  const closeModal = () => {
-    setSearchParams({});
-  };
-
-  const handleEditClick = (id: string) => {
-    setSearchParams({ edit: 'true', id });
-  };
-
-  const handleCreateClick = () => {
-    setSearchParams({ create: 'true', section: 'news' });
-  };
-
+function EventsSection({ state, onEdit, onCreate }: SectionProps) {
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -39,36 +16,20 @@ function EventsSection() {
           <StyledSectionTitle>Events</StyledSectionTitle>
           <StyledSectionLabel>Newest Events</StyledSectionLabel>
         </StyledSectionLabelAndTitleHolder>
-        <button onClick={handleCreateClick}>
+        <button onClick={() => onCreate('events')}>
           <i className="fa-solid fa-plus"></i>
         </button>
       </StyledSectionTitleAndButton>
 
-      {events.cards.map((card) => (
+      {state.cards.map((card) => (
         <Card
           key={card.id}
           layout="column"
           {...card}
-          onEditClick={() => handleEditClick(card.id)}
-          onDeleteClick={() => events.deleteCard(card.id)}
+          onEditClick={() => onEdit('events', card)}
+          onDeleteClick={() => state.deleteCard(card.id)}
         />
       ))}
-
-      {(isEditing || isCreating) && (
-        <EditCardModal
-          mode={isEditing ? 'edit' : 'create'}
-          card={isEditing ? editedCard : undefined}
-          onSave={(card) => {
-            if (isEditing) {
-              events.updateCard(card);
-            } else {
-              events.addCard(card);
-            }
-            closeModal();
-          }}
-          onClose={closeModal}
-        />
-      )}
     </StyledBaseSection>
   );
 }

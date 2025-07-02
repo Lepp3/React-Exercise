@@ -12,6 +12,13 @@ type CardProviderProps = {
   children: ReactNode;
 };
 
+export type SectionKey =
+  | 'news'
+  | 'solutions'
+  | 'events'
+  | 'podcasts'
+  | 'featured';
+
 export interface SectionCardState {
   cards: CardData[];
   addCard: (card: CardData) => void;
