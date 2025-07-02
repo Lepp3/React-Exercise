@@ -23,15 +23,27 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
         </button>
       </StyledSectionTitleAndButton>
 
-      {state.cards.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          {...card}
-          onEditClick={() => onEdit('featured', card)}
-          onDeleteClick={() => state.deleteCard(card.id)}
-        />
-      ))}
+      {state.cards.map((card, index) =>
+        index % 2 == 0 ? (
+          <Card
+            key={card.id}
+            layout="row"
+            size="wide"
+            {...card}
+            onEditClick={() => onEdit('featured', card)}
+            onDeleteClick={() => state.deleteCard(card.id)}
+          />
+        ) : (
+          <Card
+            key={card.id}
+            layout="row-reverse"
+            size="wide"
+            {...card}
+            onEditClick={() => onEdit('featured', card)}
+            onDeleteClick={() => state.deleteCard(card.id)}
+          />
+        )
+      )}
     </StyledBaseSection>
   );
 }

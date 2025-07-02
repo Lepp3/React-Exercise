@@ -6,18 +6,19 @@ import NewsSection from './NewsSection/NewsSection';
 import EventsSection from './EventsSection/EventsSection';
 import PodcastsSection from './PodcastsSection/PodcastsSection';
 import { type SectionKey } from '../../../contexts/CardContext/CardProvider';
-import { type CardData } from './Card/types/Card.types';
+import { type CardProps } from './Card/types/Card.types';
 import { useState, useEffect } from 'react';
 import { useCardContext } from '../../../contexts/CardContext/useCardContext';
 import EditCardModal from './EditingModal/EditingModal';
 import { useSearchParams } from 'react-router';
+import { StyledWrapper } from './MainContent.styles';
 
 function MainContent() {
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     mode: 'edit' | 'create';
     sectionKey: SectionKey;
-    card?: CardData;
+    card?: CardProps;
   }>({ isOpen: false, mode: 'create', sectionKey: 'news' });
 
   const [searchParams, setSearchParams] = useSearchParams();
@@ -57,7 +58,7 @@ function MainContent() {
     setSearchParams({ create: 'true', section: sectionKey });
   };
 
-  const openEditModal = (sectionKey: SectionKey, card: CardData) => {
+  const openEditModal = (sectionKey: SectionKey, card: CardProps) => {
     setModalState({ isOpen: true, mode: 'edit', sectionKey, card });
     setSearchParams({ edit: 'true', section: sectionKey, id: card.id });
   };
@@ -67,7 +68,7 @@ function MainContent() {
     setSearchParams({});
   };
 
-  const handleSave = (card: CardData, sectionKey: SectionKey) => {
+  const handleSave = (card: CardProps, sectionKey: SectionKey) => {
     const section = sectionMap[sectionKey];
     if (modalState.mode === 'edit') {
       section.updateCard(card);
@@ -91,21 +92,25 @@ function MainContent() {
         onEdit={openEditModal}
         onCreate={openCreateModal}
       />
-      <EventsSection
-        state={events}
-        onEdit={openEditModal}
-        onCreate={openCreateModal}
-      />
+      <StyledWrapper>
+        <EventsSection
+          state={events}
+          onEdit={openEditModal}
+          onCreate={openCreateModal}
+        />
+        <PodcastsSection
+          state={podcasts}
+          onEdit={openEditModal}
+          onCreate={openCreateModal}
+        />
+      </StyledWrapper>
+
       <NewsSection
         state={news}
         onEdit={openEditModal}
         onCreate={openCreateModal}
       />
-      <PodcastsSection
-        state={podcasts}
-        onEdit={openEditModal}
-        onCreate={openCreateModal}
-      />
+
       {modalState.isOpen && (
         <EditCardModal
           mode={modalState.mode}

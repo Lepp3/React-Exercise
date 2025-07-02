@@ -1,16 +1,16 @@
 import Card from '../Card/Card';
 import {
-  StyledBaseSection,
   StyledSectionTitleAndButton,
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
 } from '../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
+import { StyledHalfSection } from '../MainContent.styles';
 
 function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
   return (
-    <StyledBaseSection>
+    <StyledHalfSection>
       <StyledSectionTitleAndButton>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Podcasts</StyledSectionTitle>
@@ -30,7 +30,7 @@ function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
           onDeleteClick={() => state.deleteCard(card.id)}
         />
       ))}
-    </StyledBaseSection>
+    </StyledHalfSection>
   );
 }
 

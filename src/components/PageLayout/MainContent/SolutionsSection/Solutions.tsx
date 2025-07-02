@@ -10,13 +10,13 @@ import type { CardData } from '../Card/types/Card.types';
 import { type SectionCardState } from '../../../../contexts/CardContext/CardProvider';
 import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
-interface SolutionsSectionProps {
+export interface SectionProps {
   state: SectionCardState;
   onEdit: (sectionKey: SectionKey, card: CardData) => void;
   onCreate: (sectionKey: SectionKey) => void;
 }
 
-function SolutionsSection({ state, onEdit, onCreate }: SolutionsSectionProps) {
+function SolutionsSection({ state, onEdit, onCreate }: SectionProps) {
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -29,7 +29,7 @@ function SolutionsSection({ state, onEdit, onCreate }: SolutionsSectionProps) {
         </button>
       </StyledSectionTitleAndButton>
 
-      {state.cards.map((card: CardData) => (
+      {state.cards.map((card) => (
         <Card
           key={card.id}
           layout="column"

@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { type CardData } from '../Card/types/Card.types';
+import { useState, useMemo } from 'react';
+import { type CardProps } from '../Card/types/Card.types';
 import { StyledOverlay, StyledModal } from './EditingModal.styles';
 import { v4 as uuidv4 } from 'uuid';
 import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
 
 interface EditCardModalProps {
   mode: 'edit' | 'create';
-  card?: CardData;
+  card?: CardProps;
   sectionKey: SectionKey;
-  onSave: (updatedCard: CardData, sectionKey: SectionKey) => void;
+  onSave: (updatedCard: CardProps, sectionKey: SectionKey) => void;
   onClose: () => void;
 }
 
@@ -20,7 +20,7 @@ function EditCardModal({
   onClose,
 }: EditCardModalProps) {
   const isEdit = mode === 'edit';
-  const [form, setForm] = useState<CardData>(
+  const [form, setForm] = useState<CardProps>(
     card ?? {
       id: uuidv4(),
       title: '',
@@ -31,6 +31,16 @@ function EditCardModal({
       layout: 'column',
     }
   );
+
+  const isFormValid = useMemo(() => {
+    return (
+      form.title?.trim() !== '' ||
+      form.image?.trim() !== '' ||
+      form.description?.trim() !== '' ||
+      form.label?.trim() !== '' ||
+      form.actionButtonName?.trim() !== ''
+    );
+  }, [form]);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -56,14 +66,12 @@ function EditCardModal({
             value={form.title}
             onChange={handleChange}
             placeholder="Title"
-            required
           />
           <input
             name="image"
             value={form.image}
             onChange={handleChange}
             placeholder="Image URL"
-            required
           />
           <input
             name="label"
@@ -83,7 +91,14 @@ function EditCardModal({
             onChange={handleChange}
             placeholder="Button Text"
           />
-          <button type="submit">
+          <button
+            type="submit"
+            disabled={!isFormValid}
+            style={{
+              opacity: isFormValid ? 1 : 0.6,
+              cursor: isFormValid ? 'pointer' : 'not-allowed',
+            }}
+          >
             {isEdit ? 'Save Changes' : 'Create Card'}
           </button>
           <button type="button" onClick={onClose}>

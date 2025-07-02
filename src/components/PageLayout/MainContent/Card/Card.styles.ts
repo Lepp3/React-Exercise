@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import { Link } from 'react-router';
+import { type CardSize, type CardLayout } from './types/Card.types';
 
-type CardLayout = 'default' | 'wide' | 'row-reverse' | 'column';
+interface StyledCardProps {
+  $layout?: CardLayout;
+  $size?: CardSize;
+}
 
-interface CardProps {
+interface WideCardTopContainerProps {
   $layout?: CardLayout;
 }
 
-export const StyledCard = styled.article<CardProps>`
+export const StyledCard = styled.article<StyledCardProps>`
   display: flex;
   flex-direction: ${({ $layout }) =>
     $layout === 'row-reverse'
@@ -16,9 +20,9 @@ export const StyledCard = styled.article<CardProps>`
       ? 'column'
       : 'row'};
 
-  width: ${({ $layout }) => ($layout === 'wide' ? '100%' : '100%')};
+  width: ${({ $size }) => ($size === 'wide' ? '45%' : '100%')};
 
-  max-width: ${({ $layout }) => ($layout === 'wide' ? '1000px' : '300px')};
+  max-width: ${({ $size }) => ($size === 'wide' ? 'none' : '300px')};
   background-color: white;
   border-radius: 9px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -65,4 +69,25 @@ export const StyledCtaButton = styled(Link)`
   background-color: black;
   color: white;
   cursor: pointer;
+`;
+
+export const StyledWideCardTopContainer = styled.div<WideCardTopContainerProps>`
+  display: flex;
+  flex-direction: ${({ $layout }) =>
+    $layout === 'row-reverse' ? 'row-reverse' : 'row'};
+  height: 80%;
+`;
+
+export const StyledWideCardImg = styled(StyledImg)`
+  width: 35%;
+  height: 100%;
+`;
+
+export const StyledWideCardInfoHolder = styled(StyledCardInfoContainer)`
+  padding: 10px;
+`;
+
+export const StyledWideCard = styled(StyledCard)`
+  gap: 0px;
+  flex-direction: column;
 `;
