@@ -11,7 +11,7 @@ import { useState, useEffect } from 'react';
 import { useCardContext } from '../../../contexts/CardContext/useCardContext';
 import EditCardModal from './EditingModal/EditingModal';
 import { useSearchParams } from 'react-router';
-import { StyledWrapper } from './MainContent.styles';
+import { StyledWrapper, SectionWrapper } from './MainContent.styles';
 
 function MainContent() {
   const [modalState, setModalState] = useState<{
@@ -82,44 +82,46 @@ function MainContent() {
   return (
     <StyledMain>
       <HeroSection />
-      <SolutionsSection
-        state={solutions}
-        onEdit={openEditModal}
-        onCreate={openCreateModal}
-      />
-      <FeaturedSection
-        state={featured}
-        onEdit={openEditModal}
-        onCreate={openCreateModal}
-      />
-      <StyledWrapper>
-        <EventsSection
-          state={events}
+      <SectionWrapper>
+        <SolutionsSection
+          state={solutions}
           onEdit={openEditModal}
           onCreate={openCreateModal}
         />
-        <PodcastsSection
-          state={podcasts}
+        <FeaturedSection
+          state={featured}
           onEdit={openEditModal}
           onCreate={openCreateModal}
         />
-      </StyledWrapper>
+        <StyledWrapper>
+          <EventsSection
+            state={events}
+            onEdit={openEditModal}
+            onCreate={openCreateModal}
+          />
+          <PodcastsSection
+            state={podcasts}
+            onEdit={openEditModal}
+            onCreate={openCreateModal}
+          />
+        </StyledWrapper>
 
-      <NewsSection
-        state={news}
-        onEdit={openEditModal}
-        onCreate={openCreateModal}
-      />
-
-      {modalState.isOpen && (
-        <EditCardModal
-          mode={modalState.mode}
-          card={modalState.card}
-          sectionKey={modalState.sectionKey}
-          onSave={handleSave}
-          onClose={closeModal}
+        <NewsSection
+          state={news}
+          onEdit={openEditModal}
+          onCreate={openCreateModal}
         />
-      )}
+
+        {modalState.isOpen && (
+          <EditCardModal
+            mode={modalState.mode}
+            card={modalState.card}
+            sectionKey={modalState.sectionKey}
+            onSave={handleSave}
+            onClose={closeModal}
+          />
+        )}
+      </SectionWrapper>
     </StyledMain>
   );
 }

@@ -6,6 +6,12 @@ export const StyledSideNavigation = styled.ul`
   flex-direction: column;
   gap: 15px;
   color: blue;
+
+  @media (max-width: 500px) {
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+  }
 `;
 
 export const StyledNavButton = styled(Link)`

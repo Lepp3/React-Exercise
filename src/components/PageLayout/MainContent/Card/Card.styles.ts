@@ -18,8 +18,13 @@ export const StyledCard = styled.article<StyledCardProps>`
   background-color: white;
   border-radius: 9px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  gap: 1rem;
   height: 350px;
+
+  @media (max-width: 1150px) {
+    height: 450px;
+    width: 100%;
+    max-width: 800px;
+  }
 `;
 
 interface WideCardTopContainerProps {
@@ -38,6 +43,12 @@ export const StyledCardTopContainer = styled.div<WideCardTopContainerProps>`
   gap: 1rem;
   width: 100%;
   height: 100%;
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
 `;
 
 export const StyledCardInfoContainer = styled.div<{ $size?: CardSize }>`
@@ -48,6 +59,10 @@ export const StyledCardInfoContainer = styled.div<{ $size?: CardSize }>`
   gap: 5px;
   padding: ${({ $size }) =>
     $size === 'half-wide' || $size === 'wide' ? '10px' : '5px'};
+
+  @media (max-width: 1150px) {
+    width: 100%;
+  }
 `;
 
 export const StyledCtaContainer = styled.div`
@@ -56,6 +71,11 @@ export const StyledCtaContainer = styled.div`
   display: flex;
   justify-content: flex-end;
   min-height: 50px;
+
+  @media (max-width: 1150px) {
+    justify-content: center;
+    padding: 15px;
+  }
 `;
 
 export const StyledImg = styled.img<{ $size: CardSize }>`
@@ -66,6 +86,11 @@ export const StyledImg = styled.img<{ $size: CardSize }>`
     $size === 'half-wide' || $size === 'wide' ? '100%' : '120px'};
   border-radius: 9px 9px 0 0;
   object-fit: cover;
+
+  @media (max-width: 1150px) {
+    width: 100%;
+    height: 200px;
+  }
 `;
 
 export const StyledButtonsAndTitleContainer = styled.div`
@@ -84,18 +109,17 @@ export const StyledCtaButton = styled(Link)`
   background-color: black;
   color: white;
   cursor: pointer;
+
+  @media (max-width: 1150px) {
+    align-self: center;
+  }
 `;
 
-export const StyledWideCardImg = styled(StyledImg)`
-  width: 35%;
-  height: 100%;
-`;
-
-export const StyledWideCardInfoHolder = styled(StyledCardInfoContainer)`
-  padding: 10px;
-`;
-
-export const StyledWideCard = styled(StyledCard)`
-  gap: 0px;
-  flex-direction: column;
+export const StyledDescription = styled.p`
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.4;
+  max-height: 2.8em;
 `;

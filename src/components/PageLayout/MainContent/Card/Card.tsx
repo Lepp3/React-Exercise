@@ -7,10 +7,10 @@ import {
   CardControlButtonsHolder,
   StyledCtaButton,
   StyledCardTopContainer,
+  StyledDescription,
 } from './Card.styles';
 import { type CardProps } from './types/Card.types';
 import defaultImage from '../../../../assets/images/Yara_International.jpg';
-import { useState } from 'react';
 
 function Card({
   id,
@@ -24,16 +24,17 @@ function Card({
   onEditClick,
   onDeleteClick,
 }: CardProps) {
-  const [imageSrc, setImageSrc] = useState(image || defaultImage);
-
   return (
     <StyledCard $size={size}>
       <StyledCardTopContainer $layout={layout}>
         <StyledImg
           $size={size}
-          src={imageSrc}
+          src={image || defaultImage}
           alt={title}
-          onError={() => setImageSrc(defaultImage)}
+          onError={(e) => {
+            e.currentTarget.onerror = null;
+            e.currentTarget.src = defaultImage;
+          }}
         />
         <StyledCardInfoContainer $size={size}>
           <StyledButtonsAndTitleContainer>
@@ -49,7 +50,7 @@ function Card({
           </StyledButtonsAndTitleContainer>
           <p>{label}</p>
 
-          <p>{description}</p>
+          <StyledDescription>{description}</StyledDescription>
         </StyledCardInfoContainer>
       </StyledCardTopContainer>
 

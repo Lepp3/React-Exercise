@@ -41,6 +41,14 @@ export const StyledBaseSection = styled.section`
   flex: 1;
   width: 100%;
   justify-content: space-around;
+  align-items: flex-start;
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
 `;
 
 export const StyledSectionTitleAndButton = styled.div`
@@ -49,10 +57,15 @@ export const StyledSectionTitleAndButton = styled.div`
   flex: 0 0 100%;
   padding: 15px;
   justify-content: space-between;
+
+  @media (max-width: 1150px) {
+    flex: 1 1 auto;
+  }
 `;
 
 export const StyledSectionActionButton = styled.button`
-  align-self: flex-start;
+  align-self: center;
+  font-size: 20px;
 `;
 
 export const StyledSectionLabelAndTitleHolder = styled.div`

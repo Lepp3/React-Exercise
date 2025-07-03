@@ -5,7 +5,7 @@ import featuredCardsInfo from '../../assets/featuredCardsInfo.json';
 import newsCardsInfo from '../../assets/newsCardsInfo.json';
 import podcastsCardsInfo from '../../assets/podcastsCardsInfo.json';
 import eventsCardsInfo from '../../assets/podcastsCardsInfo.json';
-import { type CardData } from '../../components/PageLayout/MainContent/Card/types/Card.types';
+import { type CardProps } from '../../components/PageLayout/MainContent/Card/types/Card.types';
 import { CardContext } from './CardContext';
 
 type CardProviderProps = {
@@ -20,9 +20,9 @@ export type SectionKey =
   | 'featured';
 
 export interface SectionCardState {
-  cards: CardData[];
-  addCard: (card: CardData) => void;
-  updateCard: (card: CardData) => void;
+  cards: CardProps[];
+  addCard: (card: CardProps) => void;
+  updateCard: (card: CardProps) => void;
   deleteCard: (deleteCardId: string) => void;
 }
 

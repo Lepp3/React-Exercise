@@ -12,4 +12,5 @@ export const StyledHero = styled(StyledBaseSection)`
   display: flex;
   flex-direction: column;
   padding: 30px;
+  max-width: none;
 `;

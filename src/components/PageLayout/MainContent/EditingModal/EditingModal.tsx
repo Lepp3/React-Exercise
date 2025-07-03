@@ -34,7 +34,14 @@ function EditCardModal({
       description: '',
       label: '',
       actionButtonName: '',
-      layout: 'column',
+      layout:
+        sectionKey === 'featured' || sectionKey === 'events' ? 'row' : 'column',
+      size:
+        sectionKey === 'featured'
+          ? 'half-wide'
+          : sectionKey === 'events'
+          ? 'wide'
+          : 'narrow',
     }
   );
 
