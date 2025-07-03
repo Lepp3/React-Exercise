@@ -7,7 +7,7 @@ import {
   StyledSectionActionButton,
 } from '../../../../../utils/GlobalStyles';
 import { type SectionProps } from '../SolutionsSection/Solutions';
-import { StyledHalfSection } from '../../MainContent.styles';
+import { StyledHalfSection } from '../Sections.styles';
 
 function EventsSection({ state, onEdit, onCreate }: SectionProps) {
   return (

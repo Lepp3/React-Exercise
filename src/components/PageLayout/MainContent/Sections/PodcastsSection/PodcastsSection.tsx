@@ -9,7 +9,7 @@ import type { SectionProps } from '../SolutionsSection/Solutions';
 import {
   StyledHalfSection,
   StyledHalfSectionHeadings,
-} from '../../MainContent.styles';
+} from '../Sections.styles';
 
 function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
   return (

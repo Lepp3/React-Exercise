@@ -39,14 +39,16 @@ function Card({
         <StyledCardInfoContainer $size={size}>
           <StyledButtonsAndTitleContainer>
             <h2>{title}</h2>
-            <CardControlButtonsHolder>
-              <button onClick={onEditClick}>
-                <i className="fa-solid fa-pen"></i>
-              </button>
-              <button onClick={onDeleteClick}>
-                <i className="fa-solid fa-trash"></i>
-              </button>
-            </CardControlButtonsHolder>
+            {onEditClick && onDeleteClick && (
+              <CardControlButtonsHolder>
+                <button onClick={onEditClick}>
+                  <i className="fa-solid fa-pen"></i>
+                </button>
+                <button onClick={onDeleteClick}>
+                  <i className="fa-solid fa-trash"></i>
+                </button>
+              </CardControlButtonsHolder>
+            )}
           </StyledButtonsAndTitleContainer>
           <p>{label}</p>
 
