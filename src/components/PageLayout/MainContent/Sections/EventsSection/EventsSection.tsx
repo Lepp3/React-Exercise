@@ -9,7 +9,12 @@ import {
 import { type SectionProps } from '../SolutionsSection/Solutions';
 import { StyledHalfSection } from '../Sections.styles';
 
-function EventsSection({ state, onEdit, onCreate }: SectionProps) {
+function EventsSection({
+  state,
+  onEdit,
+  onCreate,
+  cardOverrides,
+}: SectionProps) {
   return (
     <StyledHalfSection>
       <StyledSectionTitleAndButton>
@@ -28,6 +33,7 @@ function EventsSection({ state, onEdit, onCreate }: SectionProps) {
           layout="row"
           size="wide"
           {...card}
+          {...cardOverrides}
           onEditClick={() => onEdit('events', card)}
           onDeleteClick={() => state.deleteCard(card.id)}
         />

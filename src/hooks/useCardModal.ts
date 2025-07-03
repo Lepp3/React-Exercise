@@ -60,7 +60,10 @@ export function useCardModal(sectionMap: PartialSectionMap) {
 
     if (mode === 'edit') {
       const card = section.cards.find((c) => c.id === cardId);
-      if (!card) return;
+      if (!card) {
+        setSearchParams({});
+        return;
+      }
       setModalState({ isOpen: true, mode, sectionKey, card });
     }
 

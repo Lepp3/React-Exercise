@@ -15,6 +15,7 @@ function EventsView() {
         state={events}
         onCreate={openCreateModal}
         onEdit={openEditModal}
+        cardOverrides={{ size: 'narrow', layout: 'column' }}
       />
 
       {modalState.isOpen && (

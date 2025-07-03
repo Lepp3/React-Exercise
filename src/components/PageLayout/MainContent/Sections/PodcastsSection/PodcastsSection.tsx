@@ -28,6 +28,7 @@ function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
         <Card
           key={card.id}
           layout="column"
+          size="narrow"
           {...card}
           onEditClick={() => onEdit('podcasts', card)}
           onDeleteClick={() => state.deleteCard(card.id)}

@@ -15,9 +15,15 @@ export interface SectionProps {
   state: SectionCardState;
   onEdit: (sectionKey: SectionKey, card: CardProps) => void;
   onCreate: (sectionKey: SectionKey) => void;
+  cardOverrides?: Partial<Pick<CardProps, 'size' | 'layout'>>;
 }
 
-function SolutionsSection({ state, onEdit, onCreate }: SectionProps) {
+function SolutionsSection({
+  state,
+  onEdit,
+  onCreate,
+  cardOverrides,
+}: SectionProps) {
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -36,6 +42,7 @@ function SolutionsSection({ state, onEdit, onCreate }: SectionProps) {
           layout="column"
           size="narrow"
           {...card}
+          {...cardOverrides}
           onEditClick={() => onEdit('solutions', card)}
           onDeleteClick={() => state.deleteCard(card.id)}
         />
