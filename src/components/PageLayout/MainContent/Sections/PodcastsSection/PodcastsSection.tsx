@@ -1,15 +1,15 @@
-import Card from '../Card/Card';
+import Card from '../../Card/Card';
 import {
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../utils/GlobalStyles';
+} from '../../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
 import {
   StyledHalfSection,
   StyledHalfSectionHeadings,
-} from '../MainContent.styles';
+} from '../../MainContent.styles';
 
 function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
   return (

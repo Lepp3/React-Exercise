@@ -7,13 +7,22 @@ function SideNavigation() {
   return (
     <StyledSideNavigation>
       <li>
-        <StyledNavButton to={'#'}>Home</StyledNavButton>
+        <StyledNavButton to={'/'}>Home</StyledNavButton>
       </li>
       <li>
-        <StyledNavButton to={'#'}>Articles</StyledNavButton>
+        <StyledNavButton to={'/solutions'}>Solutions</StyledNavButton>
       </li>
       <li>
-        <StyledNavButton to={'#'}>News</StyledNavButton>
+        <StyledNavButton to={'/featured'}>Featured</StyledNavButton>
+      </li>
+      <li>
+        <StyledNavButton to={'/events'}>Events</StyledNavButton>
+      </li>
+      <li>
+        <StyledNavButton to={'/podcasts'}>Podcasts</StyledNavButton>
+      </li>
+      <li>
+        <StyledNavButton to={'/news'}>News</StyledNavButton>
       </li>
       <li>
         <StyledNavButton to={'#'} onClick={userLogoutHandler}>

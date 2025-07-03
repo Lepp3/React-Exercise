@@ -33,7 +33,6 @@ background: none;
 `;
 
 export const StyledBaseSection = styled.section`
-  border-bottom: 1px solid gray;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;

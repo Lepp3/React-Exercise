@@ -1,4 +1,4 @@
-import Card from '../Card/Card';
+import Card from '../../Card/Card';
 import {
   StyledBaseSection,
   StyledSectionTitleAndButton,
@@ -6,10 +6,10 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../utils/GlobalStyles';
-import { type CardProps } from '../Card/types/Card.types';
-import { type SectionCardState } from '../../../../contexts/CardContext/CardProvider';
-import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
+} from '../../../../../utils/GlobalStyles';
+import { type CardProps } from '../../Card/types/Card.types';
+import { type SectionCardState } from '../../../../../contexts/CardContext/CardProvider';
+import type { SectionKey } from '../../../../../contexts/CardContext/CardProvider';
 
 export interface SectionProps {
   state: SectionCardState;

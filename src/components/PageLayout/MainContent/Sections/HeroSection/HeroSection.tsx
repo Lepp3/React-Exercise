@@ -1,5 +1,5 @@
 import { StyledHero } from './HeroSection.styles';
-import { useUserContext } from '../../../../contexts/UserContext/useUserContext';
+import { useUserContext } from '../../../../../contexts/UserContext/useUserContext';
 
 function HeroSection() {
   const { authData } = useUserContext();

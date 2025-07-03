@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { type CardProps } from '../Card/types/Card.types';
+import { type CardProps } from '../../Card/types/Card.types';
 import {
   StyledOverlay,
   StyledModal,
@@ -8,7 +8,7 @@ import {
   StyledTextArea,
 } from './EditingModal.styles';
 import { v4 as uuidv4 } from 'uuid';
-import type { SectionKey } from '../../../../contexts/CardContext/CardProvider';
+import type { SectionKey } from '../../../../../contexts/CardContext/CardProvider';
 
 interface EditCardModalProps {
   mode: 'edit' | 'create';

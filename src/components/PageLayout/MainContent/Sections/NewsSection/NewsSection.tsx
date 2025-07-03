@@ -1,4 +1,4 @@
-import Card from '../Card/Card';
+import Card from '../../Card/Card';
 import {
   StyledBaseSection,
   StyledSectionTitleAndButton,
@@ -6,7 +6,7 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../utils/GlobalStyles';
+} from '../../../../../utils/GlobalStyles';
 import type { SectionProps } from '../SolutionsSection/Solutions';
 
 function NewsSection({ state, onEdit, onCreate }: SectionProps) {

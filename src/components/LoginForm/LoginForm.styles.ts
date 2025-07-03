@@ -14,7 +14,7 @@ export const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem;
+  padding: 30px;
   background-color: #f9f9f9;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -27,7 +27,7 @@ export const StyledInput = styled.input`
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-  font-size: 1rem;
+  font-size: 16px;
 `;
 
 export const StyledLoginButton = styled.button`
@@ -37,7 +37,7 @@ export const StyledLoginButton = styled.button`
   border: 1px solid #002a5c;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  font-size: 1rem;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 

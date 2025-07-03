@@ -1,13 +1,13 @@
-import Card from '../Card/Card';
+import Card from '../../Card/Card';
 import {
   StyledSectionTitleAndButton,
   StyledSectionLabelAndTitleHolder,
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../utils/GlobalStyles';
+} from '../../../../../utils/GlobalStyles';
 import { type SectionProps } from '../SolutionsSection/Solutions';
-import { StyledHalfSection } from '../MainContent.styles';
+import { StyledHalfSection } from '../../MainContent.styles';
 
 function EventsSection({ state, onEdit, onCreate }: SectionProps) {
   return (
