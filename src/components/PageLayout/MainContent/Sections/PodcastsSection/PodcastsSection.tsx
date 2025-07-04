@@ -5,7 +5,7 @@ import {
   StyledSectionLabel,
   StyledSectionActionButton,
 } from '../../../../../utils/GlobalStyles';
-import type { SectionProps } from '../SolutionsSection/Solutions';
+import { type SectionProps } from '../types/section.types';
 import {
   StyledHalfSection,
   StyledHalfSectionHeadings,
@@ -28,7 +28,6 @@ function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
         <Card
           key={card.id}
           layout="column"
-          size="narrow"
           {...card}
           onEditClick={() => onEdit('podcasts', card)}
           onDeleteClick={() => state.deleteCard(card.id)}

@@ -7,9 +7,14 @@ import {
   StyledSectionLabel,
   StyledSectionActionButton,
 } from '../../../../../utils/GlobalStyles';
-import type { SectionProps } from '../SolutionsSection/Solutions';
+import { type SectionProps } from '../types/section.types';
 
-function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
+function FeaturedSection({
+  state,
+  onEdit,
+  onCreate,
+  cardOverrides,
+}: SectionProps) {
   return (
     <StyledBaseSection>
       <StyledSectionTitleAndButton>
@@ -31,6 +36,7 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
             layout="row"
             size="half-wide"
             {...card}
+            {...cardOverrides}
             onEditClick={() => onEdit('featured', card)}
             onDeleteClick={() => state.deleteCard(card.id)}
           />
@@ -40,6 +46,7 @@ function FeaturedSection({ state, onEdit, onCreate }: SectionProps) {
             layout="row-reverse"
             size="half-wide"
             {...card}
+            {...cardOverrides}
             onEditClick={() => onEdit('featured', card)}
             onDeleteClick={() => state.deleteCard(card.id)}
           />

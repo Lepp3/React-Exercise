@@ -1,14 +1,13 @@
-import {
-  type SectionKey,
-  type SectionCardState,
-} from '../contexts/CardContext/CardProvider';
+import { type SectionKey } from '../contexts/CardContext/CardProvider';
 import { type CardProps } from '../components/PageLayout/MainContent/Card/types/Card.types';
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router';
+import { useCardContext } from '../contexts/CardContext/useCardContext';
 
-type PartialSectionMap = Partial<Record<SectionKey, SectionCardState>>;
+export function useCardModal() {
+  const { news, solutions, featured, events, podcasts } = useCardContext();
+  const sectionMap = { news, solutions, featured, events, podcasts };
 
-export function useCardModal(sectionMap: PartialSectionMap) {
   const [searchParams, setSearchParams] = useSearchParams();
 
   const [modalState, setModalState] = useState<{
@@ -19,11 +18,13 @@ export function useCardModal(sectionMap: PartialSectionMap) {
   }>({ isOpen: false, mode: 'create', sectionKey: 'news' });
 
   const openCreateModal = (sectionKey: SectionKey) => {
+    if (!sectionMap[sectionKey]) return;
     setModalState({ isOpen: true, mode: 'create', sectionKey });
     setSearchParams({ create: 'true', section: sectionKey });
   };
 
   const openEditModal = (sectionKey: SectionKey, card: CardProps) => {
+    if (!sectionMap[sectionKey]) return;
     setModalState({ isOpen: true, mode: 'edit', sectionKey, card });
     setSearchParams({ edit: 'true', section: sectionKey, id: card.id });
   };
@@ -35,10 +36,11 @@ export function useCardModal(sectionMap: PartialSectionMap) {
 
   const handleSave = (card: CardProps, sectionKey: SectionKey) => {
     const section = sectionMap[sectionKey];
+    if (!section) return;
     if (modalState.mode === 'edit') {
-      section!.updateCard(card);
+      section.updateCard(card);
     } else {
-      section!.addCard(card);
+      section.addCard(card);
     }
     closeModal();
   };
@@ -54,12 +56,11 @@ export function useCardModal(sectionMap: PartialSectionMap) {
     const sectionKey = searchParams.get('section') as SectionKey;
     const cardId = searchParams.get('id');
 
-    if (!mode || !sectionKey || !sectionMap[sectionKey]) return;
-
     const section = sectionMap[sectionKey];
+    if (!mode || !sectionKey || !section) return;
 
     if (mode === 'edit') {
-      const card = section.cards.find((c) => c.id === cardId);
+      const card = section.cards.find((c: CardProps) => c.id === cardId);
       if (!card) {
         setSearchParams({});
         return;

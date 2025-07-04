@@ -5,9 +5,8 @@ import EditCardModal from '../Sections/EditingModal/EditingModal';
 
 function NewsView() {
   const { news } = useCardContext();
-  const sectionMap = { news };
   const { modalState, openCreateModal, openEditModal, closeModal, handleSave } =
-    useCardModal(sectionMap);
+    useCardModal();
 
   return (
     <>

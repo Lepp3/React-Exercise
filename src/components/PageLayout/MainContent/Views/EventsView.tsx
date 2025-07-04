@@ -5,9 +5,8 @@ import EditCardModal from '../Sections/EditingModal/EditingModal';
 
 function EventsView() {
   const { events } = useCardContext();
-  const sectionMap = { events };
   const { modalState, openCreateModal, openEditModal, closeModal, handleSave } =
-    useCardModal(sectionMap);
+    useCardModal();
 
   return (
     <>

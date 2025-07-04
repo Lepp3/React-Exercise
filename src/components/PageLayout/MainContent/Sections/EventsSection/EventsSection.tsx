@@ -6,7 +6,7 @@ import {
   StyledSectionLabel,
   StyledSectionActionButton,
 } from '../../../../../utils/GlobalStyles';
-import { type SectionProps } from '../SolutionsSection/Solutions';
+import { type SectionProps } from '../types/section.types';
 import { StyledHalfSection } from '../Sections.styles';
 
 function EventsSection({

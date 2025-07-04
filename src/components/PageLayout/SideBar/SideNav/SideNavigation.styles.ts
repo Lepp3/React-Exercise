@@ -11,6 +11,7 @@ export const StyledSideNavigation = styled.ul`
     width: 100%;
     align-items: center;
     flex-direction: row;
+    flex-wrap: wrap;
   }
 `;
 

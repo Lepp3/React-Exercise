@@ -5,9 +5,8 @@ import EditCardModal from '../Sections/EditingModal/EditingModal';
 
 function FeaturedView() {
   const { featured } = useCardContext();
-  const sectionMap = { featured };
   const { modalState, openCreateModal, openEditModal, closeModal, handleSave } =
-    useCardModal(sectionMap);
+    useCardModal();
 
   return (
     <>
@@ -15,6 +14,7 @@ function FeaturedView() {
         state={featured}
         onCreate={openCreateModal}
         onEdit={openEditModal}
+        cardOverrides={{ size: 'narrow', layout: 'column' }}
       />
 
       {modalState.isOpen && (

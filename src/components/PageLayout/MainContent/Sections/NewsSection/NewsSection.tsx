@@ -7,7 +7,7 @@ import {
   StyledSectionLabel,
   StyledSectionActionButton,
 } from '../../../../../utils/GlobalStyles';
-import type { SectionProps } from '../SolutionsSection/Solutions';
+import { type SectionProps } from '../types/section.types';
 
 function NewsSection({ state, onEdit, onCreate }: SectionProps) {
   return (

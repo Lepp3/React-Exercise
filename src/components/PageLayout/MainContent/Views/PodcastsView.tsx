@@ -5,9 +5,8 @@ import EditCardModal from '../Sections/EditingModal/EditingModal';
 
 function PodcastsView() {
   const { podcasts } = useCardContext();
-  const sectionMap = { podcasts };
   const { modalState, openCreateModal, openEditModal, closeModal, handleSave } =
-    useCardModal(sectionMap);
+    useCardModal();
 
   return (
     <>

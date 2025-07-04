@@ -12,10 +12,9 @@ import { useCardModal } from '../../../../hooks/useCardModal';
 
 function Sections() {
   const { news, solutions, featured, events, podcasts } = useCardContext();
-  const sectionMap = { news, solutions, featured, events, podcasts };
 
   const { modalState, openCreateModal, openEditModal, closeModal, handleSave } =
-    useCardModal(sectionMap);
+    useCardModal();
 
   return (
     <StyledMain>
