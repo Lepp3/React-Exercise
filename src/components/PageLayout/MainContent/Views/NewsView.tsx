@@ -1,7 +1,7 @@
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 import NewsSection from '../Sections/NewsSection/NewsSection';
 import { useCardModal } from '../../../../hooks/useCardModal';
-import EditCardModal from '../Sections/EditingModal/EditingModal';
+import EditCardModal from '../EditingModal/EditingModal';
 
 function NewsView() {
   const { news } = useCardContext();

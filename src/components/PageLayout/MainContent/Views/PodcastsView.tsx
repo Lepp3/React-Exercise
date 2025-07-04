@@ -1,7 +1,7 @@
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 import PodcastsSection from '../Sections/PodcastsSection/PodcastsSection';
 import { useCardModal } from '../../../../hooks/useCardModal';
-import EditCardModal from '../Sections/EditingModal/EditingModal';
+import EditCardModal from '../EditingModal/EditingModal';
 
 function PodcastsView() {
   const { podcasts } = useCardContext();

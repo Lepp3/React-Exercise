@@ -1,7 +1,7 @@
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 import EventsSection from '../Sections/EventsSection/EventsSection';
 import { useCardModal } from '../../../../hooks/useCardModal';
-import EditCardModal from '../Sections/EditingModal/EditingModal';
+import EditCardModal from '../EditingModal/EditingModal';
 
 function EventsView() {
   const { events } = useCardContext();

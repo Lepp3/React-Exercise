@@ -6,7 +6,7 @@ import NewsSection from './NewsSection/NewsSection';
 import EventsSection from './EventsSection/EventsSection';
 import PodcastsSection from './PodcastsSection/PodcastsSection';
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
-import EditCardModal from './EditingModal/EditingModal';
+import EditCardModal from '../EditingModal/EditingModal';
 import { StyledWrapper, SectionWrapper } from './Sections.styles';
 import { useCardModal } from '../../../../hooks/useCardModal';
 

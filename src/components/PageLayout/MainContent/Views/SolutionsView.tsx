@@ -1,7 +1,7 @@
 import { useCardContext } from '../../../../contexts/CardContext/useCardContext';
 import SolutionsSection from '../Sections/SolutionsSection/Solutions';
 import { useCardModal } from '../../../../hooks/useCardModal';
-import EditCardModal from '../Sections/EditingModal/EditingModal';
+import EditCardModal from '../EditingModal/EditingModal';
 
 function SolutionsView() {
   const { solutions } = useCardContext();
