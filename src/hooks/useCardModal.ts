@@ -18,13 +18,17 @@ export function useCardModal() {
   }>({ isOpen: false, mode: 'create', sectionKey: 'news' });
 
   const openCreateModal = (sectionKey: SectionKey) => {
-    if (!sectionMap[sectionKey]) return;
+    if (!sectionMap[sectionKey]) {
+      return;
+    }
     setModalState({ isOpen: true, mode: 'create', sectionKey });
     setSearchParams({ create: 'true', section: sectionKey });
   };
 
   const openEditModal = (sectionKey: SectionKey, card: CardProps) => {
-    if (!sectionMap[sectionKey]) return;
+    if (!sectionMap[sectionKey]) {
+      return;
+    }
     setModalState({ isOpen: true, mode: 'edit', sectionKey, card });
     setSearchParams({ edit: 'true', section: sectionKey, id: card.id });
   };
@@ -36,7 +40,9 @@ export function useCardModal() {
 
   const handleSave = (card: CardProps, sectionKey: SectionKey) => {
     const section = sectionMap[sectionKey];
-    if (!section) return;
+    if (!section) {
+      return;
+    }
     if (modalState.mode === 'edit') {
       section.updateCard(card);
     } else {

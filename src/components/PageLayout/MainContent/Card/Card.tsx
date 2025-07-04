@@ -13,7 +13,6 @@ import { type CardProps } from './types/Card.types';
 import defaultImage from '../../../../assets/images/Yara_International.jpg';
 
 function Card({
-  id,
   title,
   image,
   description,
@@ -58,9 +57,7 @@ function Card({
 
       <StyledCtaContainer>
         {actionButtonName !== '' ? (
-          <StyledCtaButton to={`solutions/${id}`}>
-            {actionButtonName}
-          </StyledCtaButton>
+          <StyledCtaButton to={`#`}>{actionButtonName}</StyledCtaButton>
         ) : null}
       </StyledCtaContainer>
     </StyledCard>

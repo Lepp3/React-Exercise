@@ -67,7 +67,9 @@ function EditCardModal({
     onSave(form, sectionKey);
   };
 
-  if (mode === 'edit' && !card) return null;
+  if (mode === 'edit' && !card) {
+    return null;
+  }
 
   return (
     <StyledOverlay onClick={onClose}>
@@ -81,7 +83,8 @@ function EditCardModal({
               name="title"
               value={form.title}
               onChange={handleChange}
-              placeholder="Title"
+              placeholder="Title (10 char max)"
+              maxLength={10}
             />
           </FormGroup>
           <FormGroup>
@@ -101,7 +104,8 @@ function EditCardModal({
               name="label"
               value={form.label}
               onChange={handleChange}
-              placeholder="Label"
+              placeholder="Label (10 char max)"
+              maxLength={10}
             />
           </FormGroup>
 
@@ -122,7 +126,8 @@ function EditCardModal({
               name="actionButtonName"
               value={form.actionButtonName}
               onChange={handleChange}
-              placeholder="Button Text"
+              placeholder="Button Text (10 char max)"
+              maxLength={10}
             />
           </FormGroup>
           <FormGroup>
