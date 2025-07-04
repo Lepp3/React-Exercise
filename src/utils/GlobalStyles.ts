@@ -8,7 +8,7 @@ padding: 0;
 }
 
 html,body,#root{
-font-family: 'Inter', sans-serif;
+font-family: 'Arial', sans-serif;
 background-color: #e1e3de;
 font-size: 16px;
 height: 100%;

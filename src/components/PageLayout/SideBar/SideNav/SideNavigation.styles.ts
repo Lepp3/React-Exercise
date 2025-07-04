@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router';
 
 export const StyledSideNavigation = styled.ul`
-  display: flex;
   flex-direction: column;
   gap: 15px;
   color: blue;

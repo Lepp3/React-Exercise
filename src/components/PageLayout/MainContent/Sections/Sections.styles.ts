@@ -8,20 +8,20 @@ export const StyledMain = styled.main`
 `;
 
 export const SectionWrapper = styled.div`
-      max-width: 1800px;
-      display: flex;
-      flex-direction: column;
+  max-width: 1800px;
+  display: flex;
+  flex-direction: column;
 
-      @media (max-width: 1150px) {
-        align-self: center;
-      }
+  @media (max-width: 1150px) {
+    align-self: center;
+  }
   
-      @media (min-width: 2000px) {
-      flex-direction: column;
-      align-items: center;
-      margin: auto;
-      }
-    }`;
+  @media (min-width: 2000px) {
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    }
+  }`;
 
 export type Orientation = 'row' | 'column';
 
