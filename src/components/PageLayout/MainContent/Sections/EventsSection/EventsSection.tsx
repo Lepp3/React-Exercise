@@ -5,7 +5,8 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../../utils/GlobalStyles';
+  CardWrapper,
+} from '../Sections.styles';
 import { type SectionProps } from '../types/section.types';
 import { StyledHalfSection } from '../Sections.styles';
 
@@ -14,9 +15,10 @@ function EventsSection({
   onEdit,
   onCreate,
   cardOverrides,
+  orientation = 'row',
 }: SectionProps) {
   return (
-    <StyledHalfSection>
+    <StyledHalfSection $orientation={orientation}>
       <StyledSectionTitleAndButton>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Events</StyledSectionTitle>
@@ -26,18 +28,19 @@ function EventsSection({
           <i className="fa-solid fa-plus"></i>
         </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
-
-      {state.cards.map((card) => (
-        <Card
-          key={card.id}
-          layout="row"
-          size="wide"
-          {...card}
-          {...cardOverrides}
-          onEditClick={() => onEdit('events', card)}
-          onDeleteClick={() => state.deleteCard(card.id)}
-        />
-      ))}
+      <CardWrapper>
+        {state.cards.map((card) => (
+          <Card
+            key={card.id}
+            layout="row"
+            size="wide"
+            {...card}
+            {...cardOverrides}
+            onEditClick={() => onEdit('events', card)}
+            onDeleteClick={() => state.deleteCard(card.id)}
+          />
+        ))}
+      </CardWrapper>
     </StyledHalfSection>
   );
 }

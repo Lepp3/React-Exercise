@@ -4,16 +4,22 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../../utils/GlobalStyles';
+  CardWrapper,
+} from '../Sections.styles';
 import { type SectionProps } from '../types/section.types';
 import {
   StyledHalfSection,
   StyledHalfSectionHeadings,
 } from '../Sections.styles';
 
-function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
+function PodcastsSection({
+  state,
+  onEdit,
+  onCreate,
+  orientation,
+}: SectionProps) {
   return (
-    <StyledHalfSection>
+    <StyledHalfSection $orientation={orientation}>
       <StyledHalfSectionHeadings>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Podcasts</StyledSectionTitle>
@@ -23,16 +29,17 @@ function PodcastsSection({ state, onEdit, onCreate }: SectionProps) {
           <i className="fa-solid fa-plus"></i>
         </StyledSectionActionButton>
       </StyledHalfSectionHeadings>
-
-      {state.cards.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          {...card}
-          onEditClick={() => onEdit('podcasts', card)}
-          onDeleteClick={() => state.deleteCard(card.id)}
-        />
-      ))}
+      <CardWrapper>
+        {state.cards.map((card) => (
+          <Card
+            key={card.id}
+            layout="column"
+            {...card}
+            onEditClick={() => onEdit('podcasts', card)}
+            onDeleteClick={() => state.deleteCard(card.id)}
+          />
+        ))}
+      </CardWrapper>
     </StyledHalfSection>
   );
 }

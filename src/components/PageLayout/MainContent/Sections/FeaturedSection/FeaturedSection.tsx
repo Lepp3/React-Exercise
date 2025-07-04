@@ -6,7 +6,8 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../../utils/GlobalStyles';
+  CardWrapper,
+} from '../Sections.styles';
 import { type SectionProps } from '../types/section.types';
 
 function FeaturedSection({
@@ -14,9 +15,10 @@ function FeaturedSection({
   onEdit,
   onCreate,
   cardOverrides,
+  orientation = 'row',
 }: SectionProps) {
   return (
-    <StyledBaseSection>
+    <StyledBaseSection $orientation={orientation}>
       <StyledSectionTitleAndButton>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Featured</StyledSectionTitle>
@@ -28,30 +30,31 @@ function FeaturedSection({
           <i className="fa-solid fa-plus"></i>
         </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
-
-      {state.cards.map((card, index) =>
-        index % 2 == 0 ? (
-          <Card
-            key={card.id}
-            layout="row"
-            size="half-wide"
-            {...card}
-            {...cardOverrides}
-            onEditClick={() => onEdit('featured', card)}
-            onDeleteClick={() => state.deleteCard(card.id)}
-          />
-        ) : (
-          <Card
-            key={card.id}
-            layout="row-reverse"
-            size="half-wide"
-            {...card}
-            {...cardOverrides}
-            onEditClick={() => onEdit('featured', card)}
-            onDeleteClick={() => state.deleteCard(card.id)}
-          />
-        )
-      )}
+      <CardWrapper>
+        {state.cards.map((card, index) =>
+          index % 2 == 0 ? (
+            <Card
+              key={card.id}
+              layout="row"
+              size="half-wide"
+              {...card}
+              {...cardOverrides}
+              onEditClick={() => onEdit('featured', card)}
+              onDeleteClick={() => state.deleteCard(card.id)}
+            />
+          ) : (
+            <Card
+              key={card.id}
+              layout="row-reverse"
+              size="half-wide"
+              {...card}
+              {...cardOverrides}
+              onEditClick={() => onEdit('featured', card)}
+              onDeleteClick={() => state.deleteCard(card.id)}
+            />
+          )
+        )}
+      </CardWrapper>
     </StyledBaseSection>
   );
 }

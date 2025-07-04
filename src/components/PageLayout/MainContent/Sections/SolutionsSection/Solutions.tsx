@@ -6,7 +6,8 @@ import {
   StyledSectionTitle,
   StyledSectionLabel,
   StyledSectionActionButton,
-} from '../../../../../utils/GlobalStyles';
+  CardWrapper,
+} from '../Sections.styles';
 import { type SectionProps } from '../types/section.types';
 
 function SolutionsSection({
@@ -14,9 +15,10 @@ function SolutionsSection({
   onEdit,
   onCreate,
   cardOverrides,
+  orientation = 'row',
 }: SectionProps) {
   return (
-    <StyledBaseSection>
+    <StyledBaseSection $orientation={orientation}>
       <StyledSectionTitleAndButton>
         <StyledSectionLabelAndTitleHolder>
           <StyledSectionTitle>Solutions</StyledSectionTitle>
@@ -26,18 +28,19 @@ function SolutionsSection({
           <i className="fa-solid fa-plus"></i>
         </StyledSectionActionButton>
       </StyledSectionTitleAndButton>
-
-      {state.cards.map((card) => (
-        <Card
-          key={card.id}
-          layout="column"
-          size="narrow"
-          {...card}
-          {...cardOverrides}
-          onEditClick={() => onEdit('solutions', card)}
-          onDeleteClick={() => state.deleteCard(card.id)}
-        />
-      ))}
+      <CardWrapper>
+        {state.cards.map((card) => (
+          <Card
+            key={card.id}
+            layout="column"
+            size="narrow"
+            {...card}
+            {...cardOverrides}
+            onEditClick={() => onEdit('solutions', card)}
+            onDeleteClick={() => state.deleteCard(card.id)}
+          />
+        ))}
+      </CardWrapper>
     </StyledBaseSection>
   );
 }

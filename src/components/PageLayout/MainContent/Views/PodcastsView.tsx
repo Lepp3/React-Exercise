@@ -14,6 +14,7 @@ function PodcastsView() {
         state={podcasts}
         onCreate={openCreateModal}
         onEdit={openEditModal}
+        orientation="column"
       />
 
       {modalState.isOpen && (

@@ -15,6 +15,7 @@ function FeaturedView() {
         onCreate={openCreateModal}
         onEdit={openEditModal}
         cardOverrides={{ size: 'narrow', layout: 'column' }}
+        orientation="column"
       />
 
       {modalState.isOpen && (

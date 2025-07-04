@@ -14,6 +14,7 @@ function SolutionsView() {
         state={solutions}
         onCreate={openCreateModal}
         onEdit={openEditModal}
+        orientation="column"
       />
 
       {modalState.isOpen && (
